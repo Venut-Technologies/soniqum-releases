@@ -6,6 +6,20 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.4.1</title>
+            <pubDate>Tue, 06 Oct 2026 13:39:54 +0300</pubDate>
+            <sparkle:version>2026100605</sparkle:version>
+            <sparkle:shortVersionString>0.4.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Изменено</h3>
+<ul>
+<li>Сборка подписана сертификатом Developer ID и нотаризована Apple: на другом Mac приложение из DMG открывается сразу, без «Всё равно открыть» в Системных настройках, и macOS больше не переспрашивает разрешения после каждого обновления. Версии 0.2.0–0.4.0 обновятся до неё сами при выходе.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.4.1/Soniqum-0.4.1.dmg" length="7672447" type="application/octet-stream" sparkle:edSignature="qct9omMXWv47V901YQmwq/Qb8YjY6a/tGvl4EabvgmNSv4q9MxGiDHxIw5IbWZGWN8h49ZNcRb5zmrkluWUPDg=="/>
+        </item>
+        <item>
             <title>0.4.0</title>
             <pubDate>Mon, 05 Oct 2026 16:14:08 +0300</pubDate>
             <sparkle:version>2026100503</sparkle:version>
