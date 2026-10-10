@@ -6,6 +6,35 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.5.1</title>
+            <pubDate>Sat, 10 Oct 2026 05:46:06 +0300</pubDate>
+            <sparkle:version>2026101008</sparkle:version>
+            <sparkle:shortVersionString>0.5.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p><strong>После обновления один раз пересканируйте каждую библиотеку полностью</strong>: File → «Пересканировать библиотеку полностью» (в CLI — <code>soniqum scan --full</code>). Изменилось чтение пользовательских полей: значение, записанное под другим написанием стандартного тега (<code>TXXX:ALBUM ARTIST</code>, <code>TXXX:KEY</code>, <code>MusicBrainz Album Id</code> с пробелами), больше не показывается отдельным пользовательским полем — оно читается только как своё стандартное поле. Схема индекса не меняется, приложение рескан само не запускает, а обычный скан перечитывает только изменившиеся файлы — до полного рескана в индексе остаются прежние лишние поля.</p>
+<h3>Изменено</h3>
+<ul>
+<li><strong>Стандартное поле всегда записывается в стандартный тег.</strong> Если значение «Исполнителя альбома», тональности или числа треков лежало в файле только под другим написанием (<code>TXXX:ALBUM ARTIST</code>, <code>TXXX:KEY</code>, <code>TXXX:TOTALTRACKS</code>; во FLAC и Ogg — <code>ALBUM ARTIST</code>), правка пишет его в стандартный тег (<code>TPE2</code>, <code>TKEY</code>, итог — в <code>TRCK</code>; <code>ALBUMARTIST</code>), а старое написание убирает. ⌘Z возвращает прежнее значение — тоже в стандартный тег: старое написание не восстанавливается. Остальные теги файла не меняются.</li>
+<li><strong>Каждый записанный файл перечитывается до того, как заменит оригинал</strong>: если Soniqum не может прочитать теги, которые только что записал, запись считается неудачной, а файл остаётся прежним.</li>
+<li><strong>Идентификаторы MusicBrainz с пробелами в имени</strong> (<code>MusicBrainz Album Id</code> и подобные) — это служебные поля MusicBrainz, а не отдельные пользовательские поля. У MP3, WAV и AIFF три из них (<code>MUSICBRAINZ_ALBUMID</code>, <code>MUSICBRAINZ_RELEASEGROUPID</code>, <code>MUSICBRAINZ_RELEASETRACKID</code>) можно удалить («Удалить тег», <code>soniqum plan remove</code>), ⌘Z их возвращает; изменить их значение по-прежнему нельзя.</li>
+<li>CLI: в <code>plan set</code> и <code>plan remove</code> для MP3, WAV и AIFF имя кадра ID3 (<code>TPE1</code>, <code>TPE2</code>, <code>TRCK</code>, …) означает соответствующее поле — <code>TPE2=…</code> правит «Исполнителя альбома».</li>
+</ul>
+<h3>Исправлено</h3>
+<ul>
+<li><strong>MP4: правка «Всего треков» или «Всего дисков» больше не стирает номер трека или диска</strong> в файлах, где итог хранится отдельной записью <code>TOTALTRACKS</code>/<code>TOTALDISCS</code> (так пишут foobar2000 и скрипты). Номер и итог записываются вместе в стандартный атом, ⌘Z возвращает прежний итог. Раскладка Music.app не изменилась.</li>
+<li><strong>Одно поле под двумя именами в одной правке</strong> (<code>ALBUMARTIST</code> и <code>ALBUM ARTIST</code>, <code>ARTIST</code> и <code>TPE1</code>, …), в том числе при вводе в инспекторе: с разными значениями правка отклоняется — «field ALBUMARTIST given twice with different values», с одинаковыми это одна правка. Раньше одно из значений терялось, а откат был невозможен.</li>
+<li><strong>Обложка, которую формат не вместит, отклоняется ещё до записи</strong>: картинка больше 16,7 МБ (в Ogg и Opus — больше 12,5 МБ) не встраивается, файл пропускается с причиной <code>picture too large for mp4 (17.0 MB, limit 16.7 MB)</code>. Раньше запись проходила, а затем Soniqum не мог прочитать такой файл и откатить правку.</li>
+<li><strong>Запись на месте на заполненном томе</strong> (<code>--inplace</code>, флешки exFAT): если места не хватило, файл возвращается из страховочной копии — раньше MP3 и M4A могли остаться по 0 байт, а у FLAC правка оставалась в файле при журнале «не записано». Если и вернуть копию не удалось, операция помечается в журнале как неизвестная, копия <code>.‹имя›.soniqum-bak</code> остаётся рядом с файлом, а следующий скан или открытие библиотеки возвращает её; отмена после этого откатывает только то, что действительно записалось.</li>
+<li><strong>Ошибка записи называет причину</strong>: <code>failed to write Mpeg file: No space left on device (os error 28)</code> вместо одного <code>failed to write Mpeg file</code>.</li>
+<li><strong><code>soniqum scan</code> ждёт, пока другой процесс Soniqum пишет в библиотеку</strong>, вместо мгновенного отказа «database is locked».</li>
+<li><strong>«Разнобой исполнителей» и «Разнобой жанров» в «Здоровье» считают каждый трек один раз</strong>: трек с двумя жанрами из разных групп больше не попадает в число дважды, и число в списке совпадает с баннером.</li>
+<li><strong><code>soniqum history --file &lt;путь&gt;</code> находит историю файла, убранного из индекса</strong> («Убрать из индекса…» в «Здоровье», <code>soniqum health --purge</code>), по пути из журнала.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.5.1/Soniqum-0.5.1.dmg" length="7973244" type="application/octet-stream" sparkle:edSignature="8Kf78BqWqqkFFrx7DoBLSm5ybE4ZaaGNrpGY/w+RwtuYGA9ca8ywEtWrQcvFq/uW5sstTJs8aWnzZd3pHsrwBw=="/>
+        </item>
+        <item>
             <title>0.5.0</title>
             <pubDate>Fri, 09 Oct 2026 10:40:55 +0300</pubDate>
             <sparkle:version>2026100907</sparkle:version>
