@@ -6,6 +6,42 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.7.1</title>
+            <pubDate>Fri, 16 Oct 2026 04:36:41 +0300</pubDate>
+            <sparkle:version>2026101612</sparkle:version>
+            <sparkle:shortVersionString>0.7.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p>Схема индекса не меняется, миграции нет. <strong>Полный рескан нужен</strong>, если в библиотеке есть хоть что-то из этого:</p>
+<ul>
+<li>MP4 с несколькими одноимёнными freeform-атомами или ID3 с <code>TXXX</code>, различающимися регистром описания;</li>
+<li>ID3 с <code>TRCK</code>/<code>TPOS</code> вида <code>A1</code> или <code>07/012</code>: 0.7.0 записала <code>A1</code> в индекс как <code>TRACKTOTAL</code>, и «#» остаётся пустым до рескана;</li>
+<li>ID3v2.3 с испорченным <code>TDAT</code>/<code>TIME</code>: 0.7.0 не записала для них <code>DATE</code>.</li>
+</ul>
+<p>Обычный скан такие файлы не перечитывает: у них не меняются ни размер, ни время. До полного рескана правка этих полей (пользовательские поля, TRACK/DISC и их «всего», DATE) отказывает как «изменён с момента плана», и ничего не пишется. После рескана план можно собрать заново.</p>
+<h3>Изменено</h3>
+<ul>
+<li><strong>Номера треков и дисков — текст.</strong> <code>TRCK</code>/<code>TPOS</code> вроде <code>A1</code> и <code>B2</code> на виниловых рипах показываются в «#»/«Диск» как есть и переживают правку и откат; у MP4 (где номер — число) нечисловое значение отсекается уже в предпросмотре. Нулевое дополнение (<code>07/012</code>) сохраняется.</li>
+<li><strong><code>3/12</code> в TRACK/DISC</strong> на любом формате пропускается при планировании: «всего» пишется в TRACKTOTAL/DISCTOTAL. У MP4 <code>07</code> записывается как <code>7</code>, а <code>0</code> удаляет номер.</li>
+<li><strong>Пользовательские поля MP4/ID3: один атом или кадр на поле</strong> — первый в файле; одноимённые с другим <code>mean</code> или регистром — чужие, правка и удаление их не трогают, откат возвращает атом с исходными <code>mean</code>, написанием и типом данных.</li>
+<li><strong>Повторное применение плана</strong> пропускает уже записанные файлы (<code>already applied</code>) вместо ложных отказов и не сдвигает время применения.</li>
+<li><strong>MCP:</strong> курсор <code>get_tracks</code> привязан к запросу (чужой курсор — <code>invalid_argument</code>); <code>soniqum-mcp --version</code> показывает ревизию и схему; отказ для перекрытого файла в CLI называет перекрывший план.</li>
+</ul>
+<h3>Исправлено</h3>
+<ul>
+<li><strong>Даты:</strong> ID3v2.3 с испорченным <code>TDAT</code> больше не теряет год при откате правки DATE; MP3 с <code>TDRC</code> не в формате даты (<code>2019/05/01</code>, <code>unknown</code>) читается, правится и сохраняет кадр; если кадр даты вернуть нельзя, правка отказывает заранее, а не теряет дату молча.</li>
+<li><strong>Нечисловой номер трека</strong> (<code>A1</code>) больше не удаляется записью и откатом.</li>
+<li><strong>MP4:</strong> второй одноимённый freeform-атом больше не удаляется молча; откат удаления не переименовывает атом в верхний регистр и не меняет UTF-16 на UTF-8.</li>
+<li><strong>Выход:</strong> ⌘Q при открытом редакторе плейлиста и несохранённых правках («Сохранить» → «Сохранить и выйти») больше не зависает и не теряет правку.</li>
+<li><strong>Таблица и Здоровье:</strong> линия бывшего разделителя после ⌥⌘I/⇧⌘D, ввод порога «Маленькая обложка» с клавиатуры, полоса агента после ⌘Z его плана, имя агента в строке ожидания, фрагмент Claude Desktop с <code>--data-dir</code>, счётчик правок «у K из N».</li>
+<li><strong>Разовая сессия</strong> восстанавливает <code>mcp.json</code> под блокировкой.</li>
+<li><strong>CLI и планирование:</strong> сообщение «field not writable» называет поле; лимит имени файла учитывает расширение; повторы полностью отказанного отката не дописывают строки в журнал; подсказки шима без базы.</li>
+<li><strong>Сборка и CI:</strong> release-сборка приложения в гейте с <code>-warnings-as-errors</code>, clippy для <code>soniqum-mcp</code> без <code>bin</code>, Actions на Node 24, FFI собирается со своим deployment target; документация MCP и раннера уточнена.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.7.1/Soniqum-0.7.1.dmg" length="20143323" type="application/octet-stream" sparkle:edSignature="4K8AiN4Ij2aSh5sTME+levd6895CeYV92t9gBxOVTBMitIQpmPKTFIQPMgK8YwykmNmORAkrn/5ErprqIwYNCw=="/>
+        </item>
+        <item>
             <title>0.7.0</title>
             <pubDate>Mon, 12 Oct 2026 15:30:56 +0300</pubDate>
             <sparkle:version>2026101211</sparkle:version>
