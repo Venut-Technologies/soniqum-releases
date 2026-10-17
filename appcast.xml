@@ -6,6 +6,23 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.8.0</title>
+            <pubDate>Sat, 17 Oct 2026 04:56:41 +0300</pubDate>
+            <sparkle:version>2026101713</sparkle:version>
+            <sparkle:shortVersionString>0.8.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p>Схема индекса <strong>v13</strong> (таблица аудио-идентичности), миграция при первом открытии, <strong>рескан не нужен</strong>. Назад пути нет: 0.7.x такую базу не откроет.</p>
+<h3>Добавлено</h3>
+<ul>
+<li><strong>Здоровье ▸ «Одинаковое аудио»:</strong> одно и то же звучание в разных файлах, как бы ни отличались теги, имя и упаковка (MP3 и FLAC одного трека — разные). Сравниваются только файлы с посчитанным аудио-ID: над группами — «Посчитано у K из N» и кнопка «Вычислить». Проход идёт в фоне, ход и «Остановить» — в своём месте строки состояния, не затирая другие сообщения; выход и открытие другой библиотеки сначала останавливают проход; таблица, инспектор и сохранение во время прохода работают; остановленный проход продолжается следующим «Вычислить». Группы с участниками и «Показать ещё», как у «Дубликатов»; в большой группе файлы подгружаются по 500 строкой «Показать ещё N файлов».</li>
+<li><strong>«Аудио-ID» в инспекторе</strong> (подраздел «Служебные», для одного трека): <code>pkt-v1 · 3b4f0c8e21aa</code>, полный хеш в подсказке и в пункте «Скопировать Аудио-ID» контекстного меню; иначе — «не посчитан», «не поддерживается: …», «ошибка: …» или «устарел — пересчитайте в Здоровье».</li>
+<li><strong>CLI <code>soniqum id</code>:</strong> аудио-ID файлов без индекса (<code>soniqum id &lt;файлы&gt;</code>, <code>--json</code>) и проход по библиотеке (<code>soniqum id --index [--full]</code>, Ctrl-C — остановка после батча); <code>soniqum health --check audio_duplicates</code> показывает «посчитано у K из N».</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.8.0/Soniqum-0.8.0.dmg" length="20961720" type="application/octet-stream" sparkle:edSignature="doV+XjYzYTDJrKkJgLnLKIUzSfI+THGpMhvv7Z4OCQwHe+i7MEVavXuVj4BJQM6O9f2f5tie5DNxK91UR5IHAA=="/>
+        </item>
+        <item>
             <title>0.7.1</title>
             <pubDate>Fri, 16 Oct 2026 04:36:41 +0300</pubDate>
             <sparkle:version>2026101612</sparkle:version>
