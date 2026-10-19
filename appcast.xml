@@ -6,6 +6,28 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.10.0</title>
+            <pubDate>Mon, 19 Oct 2026 22:18:38 +0300</pubDate>
+            <sparkle:version>2026101916</sparkle:version>
+            <sparkle:shortVersionString>0.10.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Добавлено</h3>
+<ul>
+<li><strong>Колонка «Волна».</strong> Обзор волны каждого трека прямо в таблице — три полосы частот по всей длине; щелчок по волне играет трек с этого места. Включается в Вид → Колонки → Волна.</li>
+<li><strong>Вкладка «Сетка» в нижней панели</strong> (Вид → Показать сетку, ⇧⌘G): обзор всего выбранного трека и крупный план волны, плеер — играть и пауза (пробел), переход щелчком по обзору, громкость.</li>
+<li><strong>Волны считаются сами, в фоне</strong> — после открытия библиотеки и после каждого скана, только для новых и изменённых файлов. Ход и «Остановить» — в строке состояния («Волны: 1 280 из 5 000»). Первый раз после обновления проход идёт по всей библиотеке; таблица и плеер при этом не тормозят.</li>
+</ul>
+<h3>Изменено</h3>
+<ul>
+<li>Панель «Изменения» стала вкладкой нижней панели, рядом с «Сеткой».</li>
+<li>«Здоровье» → «Одинаковое аудио»: аудио-ID новых и изменённых файлов считается тем же фоновым проходом, нажимать «Вычислить» больше не нужно (кнопка осталась — запустить сразу).</li>
+<li>Быстрый просмотр (пробел в таблице) ставит плеер на паузу: звучит что-то одно.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.10.0/Soniqum-0.10.0.dmg" length="31780319" type="application/octet-stream" sparkle:edSignature="VfL9DMiQQEioNAwQBUzCje4bWk0RDiycTe0ikxsprwxo2PNuJU8/as0glnpB1oO2eqYrH4bX75auuR5BLDiADA=="/>
+        </item>
+        <item>
             <title>0.9.0</title>
             <pubDate>Sun, 18 Oct 2026 19:15:05 +0300</pubDate>
             <sparkle:version>2026101815</sparkle:version>
