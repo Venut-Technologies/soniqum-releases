@@ -6,6 +6,17 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.12.0</title>
+            <pubDate>Mon, 26 Oct 2026 06:10:39 +0300</pubDate>
+            <sparkle:version>2026102618</sparkle:version>
+            <sparkle:shortVersionString>0.12.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<p>Внутренние изменения, видимых изменений нет.</p>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.12.0/Soniqum-0.12.0.dmg" length="33725906" type="application/octet-stream" sparkle:edSignature="gjGJ+W0l9XiLAd1QLKdbzpAtKenj3AWN1M9GrKM3Bm6cQYklDl0Wh1o52o9zwaKOwhcYXQwbivYA38Fk0F6tAg=="/>
+        </item>
+        <item>
             <title>0.11.0</title>
             <pubDate>Sun, 25 Oct 2026 14:27:13 +0300</pubDate>
             <sparkle:version>2026102517</sparkle:version>
