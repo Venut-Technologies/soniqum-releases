@@ -6,6 +6,36 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.16.0</title>
+            <pubDate>Tue, 17 Nov 2026 03:52:36 +0300</pubDate>
+            <sparkle:version>2026111722</sparkle:version>
+            <sparkle:shortVersionString>0.16.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Добавлено</h3>
+<ul>
+<li><strong>Dropbox и Яндекс Диск в настройках Mac.</strong> Подключайте аккаунты и выбирайте папки в «Облаках».</li>
+<li><strong>Треки из облака в библиотеке.</strong> Облачные папки появляются в боковой панели, их треки — в таблице. Выбранный трек играет прямо из облака. Недавний звук Soniqum держит в кэше; «Очистить кэш» в «Облаках» его освобождает, вход и каталог остаются.</li>
+<li><strong>«Связать с Dropbox…» и «Связать с Яндекс Диском…».</strong> Если папка библиотеки лежит в папке облачного клиента, Soniqum предложит связать её с той же папкой в облаке. Он сверит копии, и трек останется одной строкой: копия на диске и копия в облаке станут одним расположением.</li>
+<li><strong>Копии в связанных папках обновляются автоматически.</strong> Когда облачный клиент скачивает файл на Mac, Soniqum проверяет копию и обновляет «Расположения» трека.</li>
+<li><strong>«Удалить все теги…» удаляет тег целиком</strong>, вместе с кадрами других программ, например рейтингом и данными Traktor. Предпросмотр их называет, ⌘Z возвращает файл.</li>
+<li><strong>Поля MusicBrainz в MP3, WAV и AIFF</strong> — ID трека, трека релиза, альбома и группы релизов — теперь можно править.</li>
+</ul>
+<h3>Изменено</h3>
+<ul>
+<li><strong>Правка тегов не трогает остальное в файле.</strong> Блоки, кадры и атомы, которых правка не касается, остаются байт в байт, включая данные других программ, порядок и пустые значения.</li>
+<li><strong>Панель «Изменения» на больших планах.</strong> «Показать ещё» добавляет строки, не пересобирая уже показанные; выбранная строка остаётся на месте.</li>
+<li><strong>Отмена возвращает теги и звук.</strong> Байт в байт файл может не совпасть в трёх случаях: поле, удаление которого отменили, может встать на другое место в списке; кадр ID3 остаётся в новой кодировке; после отмены первой правки в файле остаётся созданный ею блок тегов.</li>
+</ul>
+<h3>Исправлено</h3>
+<ul>
+<li><strong>Первые теги в MP4 и M4A.</strong> В файлах без блока тегов запись могла испортить ссылки на звук или удалить служебный блок. Soniqum теперь проверяет файл до замены оригинала.</li>
+<li><strong>Файлы, которые лежат только в облаке,</strong> Soniqum при сканировании не открывает, и облачный клиент их не скачивает.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.16.0/Soniqum-0.16.0.dmg" length="38119156" type="application/octet-stream" sparkle:edSignature="dtYJ+pIf9WnPe/sv90PiiehWP539usxW0C1317rjJmxyef+kUFVPiyKv4/pVAah4eoRhxgW9GskH9n/doPxKCA=="/>
+        </item>
+        <item>
             <title>0.15.0</title>
             <pubDate>Mon, 02 Nov 2026 12:27:08 +0300</pubDate>
             <sparkle:version>2026110221</sparkle:version>
