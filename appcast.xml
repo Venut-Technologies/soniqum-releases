@@ -6,6 +6,21 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.16.1</title>
+            <pubDate>Tue, 17 Nov 2026 11:21:57 +0300</pubDate>
+            <sparkle:version>2026111723</sparkle:version>
+            <sparkle:shortVersionString>0.16.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Исправлено</h3>
+<ul>
+<li><strong>Правка трека, который лежит только в облаке.</strong> Сохранение больше не заканчивается ошибкой. Soniqum меняет теги в библиотеке, а файл в облаке пока не переписывает: в «Расположениях» у него будет «Отстаёт от каталога».</li>
+<li><strong>Повторная правка сразу после сохранения в связанной папке.</strong> В первые секунды после сохранения Soniqum больше не показывает ошибку: он записывает файл на Mac, а в облако его загружает облачный клиент.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.16.1/Soniqum-0.16.1.dmg" length="38141720" type="application/octet-stream" sparkle:edSignature="QiJ/Rxlbu3wUygULwmbjbm4Ubno02J/y4nrc4vB0hvqCnVeboWJFaukramLcGQFILyNoF5iF7UNnoJzpohjXAw=="/>
+        </item>
+        <item>
             <title>0.16.0</title>
             <pubDate>Tue, 17 Nov 2026 03:52:36 +0300</pubDate>
             <sparkle:version>2026111722</sparkle:version>
