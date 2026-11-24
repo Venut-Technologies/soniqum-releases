@@ -6,6 +6,23 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.17.1</title>
+            <pubDate>Tue, 24 Nov 2026 21:04:20 +0300</pubDate>
+            <sparkle:version>2026112325</sparkle:version>
+            <sparkle:shortVersionString>0.17.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Добавлено</h3>
+<ul>
+<li><strong>«Плейлисты» (⌘2).</strong> Обычные и умные плейлисты собраны вместе, «Избранное» стоит первым. Треки можно перетаскивать в плейлист или добавлять через меню строки; там же есть «Новый плейлист из выделения».</li>
+<li><strong>★ в таблице.</strong> Щелчок отмечает один трек, меню строки добавляет в «Избранное» всё выделение или убирает его оттуда. Новые отметки появляются сверху. Поле «В избранном» есть и в конструкторе умного плейлиста.</li>
+<li><strong>Свой порядок плейлиста.</strong> Колонка «№» показывает место трека; перетаскивание меняет порядок, «Упорядочить плейлист» сохраняет текущую сортировку. ⌫ убирает треки из плейлиста, файлы остаются. Трек без доступной копии остаётся серой строкой «Нет на диске».</li>
+<li><strong>Отмена изменений плейлистов и «Избранного».</strong> Правки сохраняются сразу, ⌘Z их отменяет. В «Истории» соседние действия над одним плейлистом объединяются в строку, которую можно раскрыть.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.17.1/Soniqum-0.17.1.dmg" length="38428333" type="application/octet-stream" sparkle:edSignature="Rs3QymtihcJQvxE+sCO7uxW4z2FBtmDmBrngryx2olt2jYhlDQVzv8cIbrj0QXYS+RUPLt5fWbw6WIwotU4cBg=="/>
+        </item>
+        <item>
             <title>0.16.1</title>
             <pubDate>Tue, 17 Nov 2026 11:21:57 +0300</pubDate>
             <sparkle:version>2026111723</sparkle:version>
