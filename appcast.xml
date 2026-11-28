@@ -6,6 +6,27 @@
         <description>Soniqum updates</description>
         <language>en</language>
         <item>
+            <title>0.18.0</title>
+            <pubDate>Sat, 28 Nov 2026 11:44:57 +0300</pubDate>
+            <sparkle:version>2026112826</sparkle:version>
+            <sparkle:shortVersionString>0.18.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<h3>Добавлено</h3>
+<ul>
+<li><strong>«Отметить в тегах»</strong> в меню выделенных треков: сохраняет результат проверки качества, по выбору добавляет метку в комментарий или группировку. Изменения можно просмотреть перед записью и отменить; пользовательская метка <code>[FAKE-FLAC]</code> сохраняется.</li>
+<li><strong>Качество в смарт-плейлистах.</strong> В конструкторе правил можно выбрать категорию качества. В разделе «Плейлисты → Шаблон» появился «Только честный lossless»: треки без потерь с высокой уверенностью проверки.</li>
+<li><strong>Проверки качества в «Здоровье».</strong> Следы lossy-кодирования, «24 из 16», апсемплинг и дефекты; результаты с низкой уверенностью — отдельно в «Под вопросом». Проверки можно скрыть в «Настройках → Здоровье».</li>
+<li><strong>Спектрограмма во вкладке «Трек».</strong> Переключение суммы и разности стереоканалов, отметки среза и ступени с частотами. Спектрограмма загружается при открытии вкладки.</li>
+<li><strong>Качество звука во вкладке «Трек».</strong> Категория, уверенность, причины и дефекты; для копий — результат у каждого расположения. Источник lossy-кодирования показывается с правом Pro.</li>
+<li><strong>Колонка «Качество»</strong> в меню колонок: показывает результат проверки звука, «?» при низкой уверенности и ⇄ при расхождении копий. Щелчок по заголовку сортирует треки по качеству. По умолчанию колонка скрыта.</li>
+<li>После расчёта волн и громкости Soniqum проверяет следы lossy-кодирования в lossless-файлах. При сканировании и анализе эта проверка приостанавливается.</li>
+<li><strong>«Посчитать решётку» в меню треков.</strong> Проверяет MP3 и AAC из выделения, включая AAC в MP4. ALAC пропускается. Расчёт можно остановить в строке состояния.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/Venut-Technologies/soniqum-releases/releases/download/v0.18.0/Soniqum-0.18.0.dmg" length="40072849" type="application/octet-stream" sparkle:edSignature="S6EY9ZphgAp0aYCI6Qh/JtsUDX0Wk0SH0svK4rIY5woM3pKrl8x7Tja+JF7eW3vpsM9sYBEo8MTcc88hOtXXAQ=="/>
+        </item>
+        <item>
             <title>0.17.1</title>
             <pubDate>Tue, 24 Nov 2026 21:04:20 +0300</pubDate>
             <sparkle:version>2026112325</sparkle:version>
